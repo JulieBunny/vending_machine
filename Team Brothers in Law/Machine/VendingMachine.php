@@ -1,6 +1,7 @@
 <?php
 namespace Machine;
 
+use Machine\Item\VendingItem;
 use Machine\Wallet\ConcreteWallet;
 use Machine\Wallet\Wallet;
 
@@ -9,11 +10,16 @@ class VendingMachine
     private $items;
     private $wallet;
 
+    /**
+     * @param $vendingItemEnum
+     *
+     * @return VendingItem
+     */
     public function itemByEnum($vendingItemEnum)
     {
         return $this->items()->itemByEnum($vendingItemEnum);
     }
-    
+
 	/**
 	 * @return VendingItemCollection
 	 */
